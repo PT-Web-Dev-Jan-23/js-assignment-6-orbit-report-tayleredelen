@@ -9,7 +9,7 @@
     <!-- TODO 2b: use *ngFor to display satellite data in the table -->
     <tr class="data-row" *ngFor="let satellite of satellites">
         <td>{{satellite.name}}</td>
-        <td *ngIf="satellite.isSpaceDebris; else noWarning" class="warning">{{satellite.type}}</td>
+        <td *ngIf="satellite.isSpaceDebris(); else noWarning" class="warning">{{satellite.type}}</td>
         <!-- td tag is 'data cell table' tr tag is a 'row of cells' loops thru each row of satellite. This creates boxes with 'Space Debris' as type highlighted.-->
         <ng-template #noWarning><td>{{satellite.type}}</td></ng-template> 
         <!-- #noWarning is angular mandatory syntax for adding variable inside conditional. This is the else that leaves type unhighlighted.-->
